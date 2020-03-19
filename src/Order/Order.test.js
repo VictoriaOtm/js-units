@@ -15,7 +15,9 @@ describe('Order component', () => {
     });
 
     it('set order prop', () => {
-        wrapper.setProps({order: fakeOrders[2]});
+        wrapper.setProps({
+            order: fakeOrders[2]
+        });
 
         expect(wrapper.find('.Order-item').length).toBe(fakeOrders[2].items.length);
     });
