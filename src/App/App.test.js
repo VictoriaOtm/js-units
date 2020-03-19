@@ -16,13 +16,13 @@ describe('App component', () => {
 
   it('set state COUNT', () => {
     // вариант 1
-    // wrapper.setState({sortType: sortTypes.COUNT});
-    // expect(toJson(wrapper)).toMatchSnapshot();
+    wrapper.setState({sortType: sortTypes.COUNT});
+    expect(toJson(wrapper)).toMatchSnapshot();
 
     // вариант 2
-    wrapper.find('select').simulate('change', {
-      target: {value: sortTypes.COUNT}
-    });
+    // wrapper.find('select').simulate('change', {
+    //   target: {value: sortTypes.COUNT}
+    // });
 
     expect(wrapper.state('sortType')).toEqual(sortTypes.COUNT);
   });
