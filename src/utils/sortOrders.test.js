@@ -24,12 +24,29 @@ describe('sortByItemCount function', () => {
 });
 
 describe('sortOrders function', () => {
+	it('if orders are null, callback is not called', function () {
+		const cb = jest.fn();
+
+		sortOrders(null, cb);
+
+		expect(cb).not.toBeCalled();
+	});
+
 	it('should call callback', function () {
 		const cb = jest.fn();
 
 		sortOrders(fakeOrders, cb);
 
 		expect(cb).toBeCalled();
+	});
+
+	it('if orders are null, callback is not called', function () {
+		const items = ['a', 'b', 'c'];
+		const itemsToBeChanged = items.slice(0);
+
+		sortOrders(itemsToBeChanged, null);
+
+		expect(itemsToBeChanged).toEqual(items);
 	});
 });
 
