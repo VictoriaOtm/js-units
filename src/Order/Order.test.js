@@ -7,10 +7,10 @@ import {fakeOrders} from "../mock/fakeOrders";
 
 configure({ adapter: new Adapter() });
 
-describe('Order component', () => {
+describe('Order component fakeOrdere[1]', () => {
     const wrapper = shallow(<Order order={fakeOrders[1]}/>);
 
-    it('render default Order', () => {
+    it('render Order component', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 });

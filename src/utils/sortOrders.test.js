@@ -58,19 +58,19 @@ describe('getSortFunction function', () => {
 		expect(result).toBeUndefined();
 	});
 
-	it('sort by itemNames', () => {
+	it(' expect sort by itemNames', () => {
 		const sortType = sortTypes.ITEM_NAMES;
 		const result = getSortFunction(sortType);
 		expect(result).toEqual(sortByItemNames);
 	});
 
-	it('sort by Data', () => {
+	it('expect sort by Data', () => {
 		const sortType = sortTypes.DATE;
 		const result = getSortFunction(sortType);
 		expect(result).toEqual(sortByDate);
 	});
 
-	it('sort by count', () => {
+	it('expect sort by count', () => {
 		const sortType = sortTypes.COUNT;
 		const result = getSortFunction(sortType);
 		expect(result).toEqual(sortByItemCount);

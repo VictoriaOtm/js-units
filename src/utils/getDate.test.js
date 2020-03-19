@@ -1,8 +1,8 @@
 import {getDate} from "./getDate";
 
 describe('getDate function', () => {
-    it('orders are null', () => {
-        const result = getDate("gdgdgd");
+    it('bad parameter and return undefined', () => {
+        const result = getDate("rubbish");
         expect(result).toBeUndefined();
     });
 
