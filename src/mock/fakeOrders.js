@@ -29,4 +29,10 @@ export const fakeOrders = [
 			'Игровая приставка Sony PlayStation 4 Pro 1TB Black (CUH-7208B)',
 		]
 	},
+	{
+		id: 127,
+		date: 1564356800003,
+		shop: 'Эльдорадов',
+		items: null,
+	},
 ];

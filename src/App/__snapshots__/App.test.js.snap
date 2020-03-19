@@ -40,6 +40,17 @@ exports[`App component render with default state DATE 1`] = `
       key="0"
       order={
         Object {
+          "date": 1564356800003,
+          "id": 127,
+          "items": null,
+          "shop": "Эльдорадов",
+        }
+      }
+    />
+    <Order
+      key="1"
+      order={
+        Object {
           "date": 1552585550000,
           "id": 126,
           "items": Array [
@@ -51,7 +62,7 @@ exports[`App component render with default state DATE 1`] = `
       }
     />
     <Order
-      key="1"
+      key="2"
       order={
         Object {
           "date": 1552481120000,
@@ -67,7 +78,7 @@ exports[`App component render with default state DATE 1`] = `
       }
     />
     <Order
-      key="2"
+      key="3"
       order={
         Object {
           "date": 1544356800000,
