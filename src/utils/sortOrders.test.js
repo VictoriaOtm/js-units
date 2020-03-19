@@ -40,7 +40,7 @@ describe('sortOrders function', () => {
 		expect(cb).toBeCalled();
 	});
 
-	it('if orders are null, callback is not called', function () {
+	it('if callback is null, items are not changed', function () {
 		const items = ['a', 'b', 'c'];
 		const itemsToBeChanged = items.slice(0);
 
@@ -72,6 +72,18 @@ describe('getSortFunction function', () => {
 
 
 describe('sortByItemNames function', () => {
+	it('if arguments are not object then 0', () => {
+		const result = sortByItemNames(null, null);
+
+		expect(result).toBe(0);
+	});
+
+	it('if Order without property "items"  then 0', () => {
+		const result = sortByItemNames({some: 'property'}, {});
+
+		expect(result).toBe(0);
+	});
+
 	it('same name ', function () {
 		const order1 = {
 			items: ['item1', 'item2'],
@@ -104,12 +116,14 @@ describe('sortByItemNames function', () => {
 
 describe('sortByDate function', () => {
 	it('same date ', function () {
+		const date = new Date('03.19.2020').getTime();
+
 		const order1 = {
-			date: new Date('03.19.2020').getTime(),
+			date: date,
 		};
 
 		const order2 = {
-			date: new Date('03.19.2020').getTime(),
+			date: date,
 		};
 
 		const result = sortByDate(order1, order2);
