@@ -21,9 +21,4 @@ describe('getDate function', () => {
 		const result = getDate('abc');
 		expect(result).toBeUndefined();
 	});
-
-	it('Infinity input', () => {
-		const result = getDate(Infinity);
-		expect(result).toBeUndefined();
-	});
 });
