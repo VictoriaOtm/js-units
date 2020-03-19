@@ -14,7 +14,7 @@ describe('Order Component', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('setting another order', () => {
+	it('setting another order property', () => {
 		wrapper.setProps({order: fakeOrders[1]});
 
 		expect(wrapper.find('.Order-item').length).toBe(fakeOrders[1].items.length);

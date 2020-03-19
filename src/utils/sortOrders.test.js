@@ -31,7 +31,7 @@ describe('sortByItemNames function', () => {
 		expect(result).toEqual(0);
 	});
 
-	it('same items`s names', () => {
+	it('same items` names', () => {
 		const order1 = {
 			items: ['itemB', 'itemB'],
 		};
@@ -59,7 +59,7 @@ describe('sortByItemNames function', () => {
 		expect(result).toBe(1);
 	});
 
-	it('second order`s names are bigger', () => {
+	it('second order`s items` names are bigger', () => {
 		const order1 = {
 			items: ['itemA', 'itemB'],
 		};

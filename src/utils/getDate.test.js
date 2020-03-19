@@ -7,10 +7,16 @@ describe('getDate function', () => {
 		expect(result).toBeUndefined();
     });
     
-    it('timestamp are string', () => {
-		const result = getDate("hello");
+    it('timestamp is invalid - object', () => {
+		const result = getDate({});
 		expect(result).toBeUndefined();
-	});
+    });
+    
+    it('timestamp is invalid - string', () => {
+        const result = getDate({});
+		expect(result).toBeUndefined();
+    });
+    
 
 	it('valid date', () => {
 		const result = getDate(1584627450000);
