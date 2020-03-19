@@ -1,10 +1,68 @@
 import React from 'react'
-import {sortByItemCount, sortByItemNames, sortByDate} from './sortOrders';
+import {sortByItemCount, sortByItemNames, sortByDate, sortOrders, getSortFunction, sortTypes} from './sortOrders';
+
+describe('sortOrders function', () => {
+	it('null order', () => {
+		const result = sortOrders(null, function(){});
+		expect(result).toBe(undefined)
+	})
+
+	it('order has not length field', () => {
+		const order = {
+			m: '1',
+		};
+		const result = sortOrders(order, function(){});
+		expect(result).toEqual(undefined);
+	});
+
+	it('null sort function', () => {
+		const order = [1, 2]
+		const result = sortOrders(order, null);
+		expect(result).toEqual(undefined);
+	});
+
+	it('not a function', () => {
+		const order = [1, 2]
+		const result = sortOrders(order, order);
+		expect(result).toEqual(undefined);
+	});
+});
+
+describe('getSortFunction function', () => {
+	it('sort by date', () => {
+		const result = getSortFunction(sortTypes.DATE)
+		expect(result).toBe(sortByDate)
+	});
+
+	it('sort by count', () => {
+		const result = getSortFunction(sortTypes.COUNT)
+		expect(result).toBe(sortByItemCount)
+	});
+
+	it('sort by names', () => {
+		const result = getSortFunction(sortTypes.ITEM_NAMES)
+		expect(result).toBe(sortByItemNames)
+	});
+});
 
 describe('sortByItemCount function', () => {
 	it('orders are null', () => {
 		const result = sortByItemCount(null, null);
 		expect(result).toEqual(0);
+	});
+
+	it('orders have not items field', () => {
+		const order1 = {
+			item: ['item1', 'item2'],
+		};
+
+		const order2 = {
+			item: ['1', '2'],
+		};
+
+		const result = sortByItemCount(order1, order2);
+
+		expect(result).toBe(0);
 	});
 
 	it('same items count', () => {
