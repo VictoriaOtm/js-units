@@ -10,7 +10,7 @@ describe('getDate', () => {
 	it('string if timestamp is number', () => {
 		const result = getDate(123);
 
-		expect(typeof result).toBeTruthy();
+		expect(typeof result).toEqual("string");
 	});
 
 	it('correct date string', () => {
