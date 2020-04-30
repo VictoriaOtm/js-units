@@ -8,13 +8,13 @@ import { fakeOrders } from '../mock/fakeOrders';
 configure({adapter: new Adapter()});
 
 describe('Order component', () => {
-    const wrapper = shallow(<Order order={fakeOrders[0]}/>);
-
     it('render with order', () => {
+        const wrapper = shallow(<Order order={fakeOrders[0]}/>);
         expect(toJSON(wrapper)).toMatchSnapshot();
     });
 
     it('set prop order', () => {
+        const wrapper = shallow(<Order order={fakeOrders[0]}/>);
         wrapper.setProps({
             order: fakeOrders[1],
         });
