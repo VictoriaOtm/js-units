@@ -23,14 +23,13 @@ describe('Order component', () => {
         wrapper = shallow(<Order/>);
     })
 
-    afterEach(() => {
-        jest.clearAllMocks();
+    afterAll(() => {
+        jest.resetAllMocks();
     })
-
 
     it('default', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
-    });
+    })
 
     it('non-empty order', () => {
         wrapper = shallow(<Order order = {fakeOrders[0]}/>);
