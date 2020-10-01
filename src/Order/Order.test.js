@@ -19,8 +19,8 @@ describe('Order component', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
-    })
+        jest.resetModules();
+    });
 
     it('render with valid fake props', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
