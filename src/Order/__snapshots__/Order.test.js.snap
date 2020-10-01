@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order Component Custom Order Components 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Lamoda.ru
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Жакет - BOREAL5
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Miss Gabby Костюм
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Ostin перчатки мужские
+    </div>
+    <div
+      className="Order-item"
+      key="3"
+    >
+      Zara худи роз.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order Component Custom Order Components 2`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Lamoda.ru
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Жакет - BOREAL5
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Miss Gabby Костюм
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Ostin перчатки мужские
+    </div>
+    <div
+      className="Order-item"
+      key="3"
+    >
+      Zara худи роз.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order Component With order 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Ali Express
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Утиный пластмасса для показ новый год
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Новый стиль один розница яйцо для упаковки форма латекс
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order Component With order 2`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Ali Express
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  />
+</div>
+`;
+
+exports[`Order Component With order 3`] = `""`;
