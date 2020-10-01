@@ -26,11 +26,6 @@ exports[`App component render with default state DATE 1`] = `
       >
         по дате
       </option>
-      <option
-        value="names"
-      >
-        по названиям товаров
-      </option>
     </select>
   </header>
   <div
