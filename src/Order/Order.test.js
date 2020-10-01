@@ -12,10 +12,12 @@ import {fakeOrders} from '../mock/fakeOrders';
 configure({adapter: new Adapter()});
 
 describe('Order component', () => {
-	let wrapper;
 	beforeEach(() => {
-		jest.clearAllMocks();
 		getDate.mockReturnValue('14 марта, чт, 2019 год');
+	});
+
+	afterEach(() => {
+		jest.clearAllMocks();
 	});
 
 	it('renders correct', () => {
