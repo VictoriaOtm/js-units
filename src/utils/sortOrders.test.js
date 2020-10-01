@@ -4,7 +4,7 @@ import {getSortFunction, sortByDate, sortByItemCount, sortOrders, sortTypes} fro
 describe('sortOrders function', () => {
 	const mockCompare = jest.fn();
 	beforeEach(() => {
-		mockCompare.mockReset()
+		mockCompare.mockClear()
 	});
 
 	it('valid sort', () => {
