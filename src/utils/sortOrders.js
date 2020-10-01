@@ -15,7 +15,7 @@ export const sortOrders = (orders, sortFunction) => {
 	if (!orders || !orders.length) {
 		return;
 	}
-
+	
 	if (!sortFunction || typeof sortFunction !== "function") {
 		return;
 	}
@@ -87,7 +87,6 @@ export const sortByDate = (order1, order2) => {
 	if (!order1 || !order2) {
 		return 0;
 	}
-
 	const {date: date1} = order1;
 	const {date: date2} = order2;
 
