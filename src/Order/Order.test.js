@@ -23,6 +23,11 @@ describe('Test Order component', () => {
         wrapper = shallow(<Order order = {fakeOrders[0]}/>);
 
         expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('test getDate default', () => {
+        wrapper = shallow(<Order order = {fakeOrders[0]}/>);
+
         expect(getDate).toHaveBeenCalledTimes(1);
     });
 
@@ -30,13 +35,11 @@ describe('Test Order component', () => {
         wrapper.setProps({order: {}});
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(getDate).toHaveBeenCalledTimes(0);
     })
 
     it('render order with empty items', () => {
         wrapper.setProps({order: {shop: "shop", date: 111, items: []}});
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(getDate).toHaveBeenCalledTimes(1);
     })
 });
