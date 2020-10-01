@@ -60,19 +60,20 @@ describe('sortByItemCount function', () => {
     })
 });
 
-afterEach(() => {
-    jest.resetAllMocks()
-})
 
 describe('sortOrders', () => {
+    afterEach(() => {
+        jest.resetAllMocks()
+    })
+
     it('sort function are called', () => {
         sortOrders(fakeOrders, sortFunctionMock)
 		expect(sortFunctionMock).toHaveBeenCalled()
 	})
 
     it('no order param', () => {
-        sortOrders(null, sortFunctionMock)
-        expect(sortFunctionMock).not.toHaveBeenCalled()
+        const res = sortOrders(null, sortFunctionMock)
+        expect(res).toBeUndefined()
     })
 
     it('no func param', () => {
@@ -86,8 +87,9 @@ describe('sortOrders', () => {
     })
 
     it('empty array', () => {
-        const res = sortOrders([], sortFunctionMock)
-        expect(sortFunctionMock).not.toHaveBeenCalled()
+        let mass = []
+        const res = sortOrders(mass, sortFunctionMock)
+        expect(mass).toStrictEqual([])
         expect(res).toBeUndefined()
     })
 
@@ -139,7 +141,9 @@ describe('sortByDate function', () => {
     })
 
     it('empty item set', () => {
-        const res = sortByDate({}, {})
+        const order1 = {}
+        const order2 = {}
+        const res = sortByDate(order1, order2)
         expect(res).toBe(0)
     })
 
@@ -164,7 +168,6 @@ describe('sortByDate function', () => {
         const order2 = {
             date: 1
         }
-
 
         const res = sortByDate(order1, order2)
         expect(res).toBe(-1)
