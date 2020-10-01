@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object component tests render default 1`] = `""`;
+
+exports[`Object component tests render with order with no date 1`] = `""`;
+
+exports[`Object component tests render with order with no shop 1`] = `""`;
+
+exports[`Object component tests render with order with shop and data 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      smth
+    </span>
+    <span
+      id="date"
+    >
+      1 января, чт, 1970 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  />
+</div>
+`;
+
+exports[`Object component tests render with order with shop, order and items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      smth
+    </span>
+    <span
+      id="date"
+    >
+      1 января, чт, 1970 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      1
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      2
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Object component tests render with order={} 1`] = `""`;
+
+exports[`Object component tests render with order=null 1`] = `""`;
