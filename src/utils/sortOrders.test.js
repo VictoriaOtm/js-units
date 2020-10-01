@@ -33,7 +33,7 @@ describe('sortByItemCount function', () => {
 
 	it.each([
 		[{items: ['item1', 'item2']}, {items: ['item1', 'item2', 'item3']}, -1],
-		[{items: ['item1', 'item2', 'item3']}, {items: ['item1', 'item2']}, 1]
+		[{items: ['item1', 'item2', 'item3']}, {items: ['item1', 'item2']}, 1],
 	])('test normal behavior', (a, b, expected) => {
 		const result = sortByItemCount(a, b);
 
