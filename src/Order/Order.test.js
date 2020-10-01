@@ -32,10 +32,6 @@ describe('Order component', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('get date', () => {
-        expect(getDate).toHaveBeenCalled();
-    })
-
     it('non-empty order', () => {
         wrapper = shallow(<Order order = {fakeOrders[0]}/>);
         expect(toJson(wrapper)).toMatchSnapshot();
