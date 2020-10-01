@@ -24,33 +24,44 @@ describe('sortByItemCount function', () => {
 });
 
 describe('sortOrders function', () => {
+    const mockSortFunc = jest.fn((a, b) => a - b);
+
+    beforeAll(() => {
+        jest.clearAllMocks();
+    });
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
+
     it('sort function called', () => {
         const fakeSortFunction = jest.fn();
-        const result = sortOrders(fakeOrders, fakeSortFunction);
+        sortOrders(fakeOrders, fakeSortFunction);
         expect(fakeSortFunction).toHaveBeenCalled();
     })
 
+    it('sort works', () => {
+        // const mockSortFunc = jest.fn((a, b) => a - b);
+
+        const array = [1, 4, 3];
+        sortOrders(array, mockSortFunc)
+
+        expect(mockSortFunc).toHaveBeenCalled();
+        expect(array).toEqual([1, 3, 4]);
+    })
+
     test.each([
-        [fakeOrders, 1, undefined],
-        [1, jest.fn(), undefined],
-        [undefined, jest.fn(), undefined],
-        [null, 1, undefined],
-        [[], null, undefined],
-    ])('Undefined results', (orders, sortFunction, expected) => {
+        [fakeOrders, 1],
+        [1, mockSortFunc],
+        [undefined, mockSortFunc],
+        [null, 1],
+        [[], null],
+    ])('Undefined results', (orders, sortFunction) => {
         const result = sortOrders(orders, sortFunction);
-        expect(result).toBe(expected);
-    })
-
-    it('undefined result if bad orders', () => {
-        const fakeSortFunction = jest.fn();
-        const result = sortOrders(1, fakeSortFunction);
+        expect(mockSortFunc).not.toHaveBeenCalled();
         expect(result).toBeUndefined();
     })
 
-    it('undefined result if bad functions', () => {
-        const result = sortOrders(fakeOrders, 1);
-        expect(result).toBeUndefined();
-    })
 
 })
 
@@ -58,7 +69,7 @@ describe('sortByDate function', () => {
     test.each([
         [{date: 111}, {date: 222}, 1],
         [{date: 222}, {date: 111}, -1],
-        [{date: 111}, {date: 111}, 0]
+        [{date: 111}, {date: 111}, 0],
     ])('sortByDate good test', (order1, order2, expected) => {
         const result = sortByDate(order1, order2);
         expect(result).toBe(expected);
@@ -67,7 +78,8 @@ describe('sortByDate function', () => {
     test.each([
         [{asd: 111}, {date: 222}, 0],
         [['date', 222], {date: 111}, 0],
-        [undefined, {date: 111}, 0]
+        [undefined, {date: 111}, 0],
+        [null, {date: 111}, 0]
     ])('sortByDate bad test', (order1, order2, expected) => {
         const result = sortByDate(order1, order2);
         expect(result).toBe(expected);

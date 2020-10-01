@@ -14,16 +14,14 @@ Enzyme.configure({adapter: new Adapter()});
 
 
 describe('Order', () => {
-    const resetMocks = () => {
-        jest.clearAllMocks();
-        getDate.mockReturnValue('28 сентября, пн, 2020 год');
-    }
+
     beforeAll(() => {
-        resetMocks();
+        getDate.mockReturnValue('28 сентября, пн, 2020 год');
+        jest.clearAllMocks();
     })
 
     afterEach(() => {
-        resetMocks()
+        jest.clearAllMocks();
     })
 
     it('render with default DATE', () => {
