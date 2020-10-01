@@ -11,7 +11,7 @@ import {fakeOrders} from "../mock/fakeOrders";
 
 
 const date = "42";
-getDate.mockReturnValue(date);
+
 
 configure({adapter: new Adapter()});
 
@@ -19,6 +19,7 @@ describe('App component', () => {
 
     beforeEach(() => {
         getDate.mockClear();
+        getDate.mockReturnValue(date);
     });
 
     afterEach(() => {

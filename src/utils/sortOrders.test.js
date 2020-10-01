@@ -41,6 +41,7 @@ describe('sortByDate function', () => {
             const result = sortByDate(a, b);
             expect(result).toBe(expected);
         });
+
 });
 
 describe('getSortFunction function', () => {
