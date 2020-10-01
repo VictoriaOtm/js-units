@@ -13,10 +13,11 @@ configure({ adapter: new Adapter() });
 describe('Test Order component', () => {
     let wrapper;
     beforeEach(() => {
-        jest.clearAllMocks();
-
         wrapper = shallow(<Order/>);
         getDate.mockReturnValue("1 октября, ср, 2020 год");
+    });
+    afterEach(() => {
+        jest.clearAllMocks();
     });
 
     it('render default', () => {
