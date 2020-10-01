@@ -12,6 +12,10 @@ configure({ adapter: new Adapter() });
 
 describe('Order component', () => {
 
+  beforeEach(() => {
+    getDate.mockReturnValue('1 октября, ср, 2020 год');
+  })
+
   afterEach(() => {
     jest.clearAllMocks();
   })
