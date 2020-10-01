@@ -5,10 +5,22 @@ import toJson from "enzyme-to-json";
 import React from "react";
 import Order from "./Order";
 import {fakeOrders} from "../mock/fakeOrders";
+import {getDate} from "../utils/getDate";
+jest.mock('../utils/getDate');
 
 configure({ adapter: new Adapter() });
 
 describe('Order Component', () => {
+    let mocked;
+    beforeEach(() => {
+        //1544356800000
+         mocked = getDate.mockReturnValue('13 марта, ср, 2019 год');
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     const props0 = { order : fakeOrders[0] }
     const TestOrder = <Order {...props0} />;
 
@@ -62,6 +74,13 @@ describe('Order Component', () => {
     it('Custom Order Components with null date', () => {
         const otherWrapper = shallow(TestOrderWithNullDate);
         expect(toJson(otherWrapper)).toMatchSnapshot();
+    });
+
+
+    it('with getDate', () => {
+        shallow(<Order order={fakeOrders[0]}/>);
+        expect(getDate).toHaveBeenCalled();
+        expect(getDate).toHaveBeenCalledWith(1544356800000);
     });
 
 
