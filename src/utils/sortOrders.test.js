@@ -32,13 +32,9 @@ describe('sortByItemCount function', () => {
 });
 
 describe('sortOrders', () => {
-		it('sortOrders() calls sortFunction()', () => {
-			const sortFunction = jest.fn((a, b) => -1);
-
-			sortOrders([1, 2], sortFunction);
-
-			expect(sortFunction).toBeCalled();
-		});
-	}
-);
-
+	it('sortOrders() calls sortFunction()', () => {
+		const sortFunction = jest.fn((a, b) => -1);
+		sortOrders([1, 2], sortFunction);
+		expect(sortFunction).toBeCalled();
+	});
+});

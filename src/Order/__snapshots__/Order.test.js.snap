@@ -42,3 +42,29 @@ exports[`Order component renders correct 1`] = `
   </div>
 </div>
 `;
+
+exports[`Order component renders correct with no items in orders 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      shop
+    </span>
+    <span
+      id="date"
+    >
+      14 марта, чт, 2019 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  />
+</div>
+`;
+
+exports[`Order component renders correct with no props 1`] = `""`;
