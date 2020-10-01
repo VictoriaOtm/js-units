@@ -18,6 +18,10 @@ describe('Order component', () => {
         wrapper = shallow(<Order order = {fakeOrders[0]}/>);
     });
 
+    afterEach(() => {
+        jest.clearAllMocks();
+    })
+
     it('render with valid fake props', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });

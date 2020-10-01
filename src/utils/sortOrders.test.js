@@ -8,7 +8,6 @@ describe('sortOrders function', () => {
 	});
 
 	it('valid sort', () => {
-
 		const order1 = {
 			items: ['item1', 'item2'],
 		};
