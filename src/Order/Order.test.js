@@ -9,11 +9,20 @@ import Order from './Order'
 import { getDate } from '../utils/getDate'
 import {fakeOrders} from '../mock/fakeOrders'
 
+
 jest.mock('../utils/getDate')
 configure({ adapter : new Adapter() })
 
 
 describe('Order Component', () => {
+  let mocked;
+  beforeEach(() => {
+    mocked = getDate.mockReturnValue('13 марта, ср, 2019 год');
+  });
+  
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   
   it('With order', () => {
     const props = { order : fakeOrders[0] }

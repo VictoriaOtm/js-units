@@ -96,7 +96,7 @@ describe('unit test sortOrders', () => {
 	
 	let gen = setup();
 	//
-	test.each([1, 5, 10, 13, 23, 30, 40, 10, 4, 20, 14, 8, 23, 17, 18, 99])('compare checks',
+	test.each([1, 5, 10, 13, 23, 30, 40, 10, 4, 20, 14, 8, 23, 17, 18, 99])('compare number of checks',
 		(num) => {
 			
 			let orders = []

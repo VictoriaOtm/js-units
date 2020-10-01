@@ -108,7 +108,9 @@ exports[`Order Component With order 1`] = `
     </span>
     <span
       id="date"
-    />
+    >
+      13 марта, ср, 2019 год
+    </span>
   </div>
   <div
     className="Order-items"
@@ -149,7 +151,9 @@ exports[`Order Component With order 2`] = `
     </span>
     <span
       id="date"
-    />
+    >
+      13 марта, ср, 2019 год
+    </span>
   </div>
   <div
     className="Order-items"
