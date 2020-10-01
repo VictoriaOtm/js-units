@@ -13,7 +13,6 @@ configure({ adapter: new Adapter() });
 describe('Order Component', () => {
     let mocked;
     beforeEach(() => {
-        //1544356800000
          mocked = getDate.mockReturnValue('13 марта, ср, 2019 год');
     });
 
@@ -21,67 +20,54 @@ describe('Order Component', () => {
         jest.clearAllMocks();
     });
 
-    const props0 = { order : fakeOrders[0] }
-    const TestOrder = <Order {...props0} />;
-
-    const testOrder =  {
-        id: 123,
-        date: 1544356800000,
-        shop: 'Ali Express',
-        items: []
-    };
-
-    const testOrder2 =  {
-        id: 123,
-        date: null,
-        shop: 'Ali Express',
-        items: []
-    };
-
 
     it('With order', () => {
+        const props = { order : fakeOrders[0] }
+        const TestOrder = <Order {...props} />;
         const wrapper = shallow(TestOrder);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    const props1 = { order : fakeOrders[1] }
-    const NewTestOrder = <Order {...props1} />;
+
 
     it('Custom Order Components', () => {
+        const props = { order : fakeOrders[1] }
+        const NewTestOrder = <Order {...props} />;
         const otherWrapper = shallow(NewTestOrder);
         expect(toJson(otherWrapper)).toMatchSnapshot();
     });
 
-    const props2 = { order : testOrder }
-    const TestOrderZero = <Order {...props2} />;
-
     it('Custom Order Components with zero items', () => {
+        const props = { order : {
+                id: 123,
+                date: 1544356800000,
+                shop: 'Ali Express',
+                items: []
+            }
+        }
+        const TestOrderZero = <Order {...props} />;
         const otherWrapper = shallow(TestOrderZero);
         expect(toJson(otherWrapper)).toMatchSnapshot();
     });
 
-    const props3 = { order : null }
-    const TestOrderWithNull = <Order {...props3} />;
 
     it('Custom Order Components with zero items', () => {
+        const props = { order : null }
+        const TestOrderWithNull = <Order {...props} />;
         const otherWrapper = shallow(TestOrderWithNull);
         expect(toJson(otherWrapper)).toMatchSnapshot();
     });
 
-    const props4 = { order : testOrder2 }
-    const TestOrderWithNullDate = <Order {...props4} />;
-
     it('Custom Order Components with null date', () => {
+        const props = { order : {
+                id: 123,
+                date: null,
+                shop: 'Ali Express',
+                items: []
+            } }
+        const TestOrderWithNullDate = <Order {...props} />;
         const otherWrapper = shallow(TestOrderWithNullDate);
         expect(toJson(otherWrapper)).toMatchSnapshot();
     });
-
-
-    it('with getDate', () => {
-        shallow(<Order order={fakeOrders[0]}/>);
-        expect(getDate).toHaveBeenCalled();
-        expect(getDate).toHaveBeenCalledWith(1544356800000);
-    });
-
 
 });
