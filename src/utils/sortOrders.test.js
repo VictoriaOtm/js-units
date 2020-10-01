@@ -11,8 +11,12 @@ describe('sortByItemCount function', () => {
 	});
 
 	it('Equal count items', () => {
-		const firstOrder = { items: ['first', 'second'],};
-		const secondOrder = {items: ['1', '2'],};
+		const firstOrder = { 
+			items: ['first', 'second'],
+		};
+		const secondOrder = {
+			items: ['1', '2'],
+		};
 
 		const result = sortByItemCount(firstOrder, secondOrder);
 
@@ -31,24 +35,24 @@ describe('sordOrders', () => {
 	  });
 
 	it('HaveNotBeenCalledBecauseOfOrders', () => {
-		sortOrders(null, sortFunctionMock);
-		expect(sortFunctionMock).not.toBeUndefined();
+		const res = sortOrders(null, sortFunctionMock);
+		expect(res).toBeUndefined();
 	})
 
 	it('HaveNotBeenCalledBecauseOfSortFunctionNull', () => {
-		sortOrders(fakeOrders, null);
-		expect(sortFunctionMock).not.toBeUndefined();
+
+		const res = sortOrders(fakeOrders, null);
+		expect(res).toBeUndefined();
 	})
 
 	it('HaveNotBeenCalledBecauseOfSortFunctionUndefined', () => {
-		sortOrders(fakeOrders, {});
-		expect(sortFunctionMock).not.toBeUndefined();
+		const res = sortOrders(fakeOrders, {});
+		expect(res).toBeUndefined();
 	})
 
 	it('HaveNotBeenCalledBecauseOfEmptyArray', () => {
-		const orders = []
-		sortOrders(orders, sortFunctionMock);
-		expect(sortFunctionMock).not.toBeUndefined();
+		const res = sortOrders([], sortFunctionMock);
+		expect(res).toBeUndefined();
 	})
 
 })
@@ -56,20 +60,17 @@ describe('sordOrders', () => {
 describe('getSortFunction', () => {
 
 		it('getSortByItemCount', () => {
-			const sortType = 'count';
-			const res = getSortFunction(sortType)
+			const res = getSortFunction('count')
 			expect(res).toBe(sortByItemCount)
 		})
 	
 		it('getSortByDate', () => {
-			const sortType = 'date';
-			const res = getSortFunction(sortType)
+			const res = getSortFunction('date')
 			expect(res).toBe(sortByDate)
 		})
 	
 		it('getNothing', () => {
-			const sortType = 'bullshit';
-			const res = getSortFunction(sortType)
+			const res = getSortFunction('bullshit')
 			expect(res).toBeUndefined()
 		})
 })
@@ -138,7 +139,9 @@ describe('sortByDate function', () => {
     });
 
     it('Equal counts of items', () => {
-        const order1 = {date: 1};
+        const order1 = {
+			date: 1
+		};
 
         const order2 = {
             date: 1
@@ -151,23 +154,33 @@ describe('sortByDate function', () => {
     it('Orders are not objects', () => {
         const res = sortByDate(1,2)
         expect(res).toBe(0)
-    })
+	})
+	it('Orders are not empty', () => {
+		const res = sortByDate({},{})
+        expect(res).toBe(0)
+	})
 
     it('Second bigger than first', () => {
         const order1 = {
             date: 1
         }
 
-        const order2 = {date: 2}
+        const order2 = {
+			date: 2
+		}
 
         const res = sortByDate(order1, order2)
         expect(res).toBe(1)
     })
 
     it('First bigger than second', () => {
-        const order1 = {date: 2}
+        const order1 = {
+			date: 2
+		}
 
-        const order2 = {date: 1}
+        const order2 = {
+			date: 1
+		}
 
         const res = sortByDate(order1, order2)
         expect(res).toBe(-1)
