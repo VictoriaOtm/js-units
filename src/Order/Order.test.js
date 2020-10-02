@@ -17,7 +17,7 @@ describe('Order component', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks()
+        jest.resetModules()
     });
 
     it('render with no items', () => {
