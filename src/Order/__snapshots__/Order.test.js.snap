@@ -20,9 +20,7 @@ exports[`Object component tests render with order with shop and data 1`] = `
     </span>
     <span
       id="date"
-    >
-      1 января, чт, 1970 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"
@@ -44,9 +42,7 @@ exports[`Object component tests render with order with shop, order and items 1`]
     </span>
     <span
       id="date"
-    >
-      1 января, чт, 1970 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"
