@@ -16,9 +16,7 @@ exports[`Object component render with data 1`] = `
     </span>
     <span
       id="date"
-    >
-      1 января, чт, 1970 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"
@@ -40,9 +38,7 @@ exports[`Object component render with data and items 1`] = `
     </span>
     <span
       id="date"
-    >
-      1 января, чт, 1970 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"
