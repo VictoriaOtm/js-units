@@ -2,11 +2,7 @@ import React from 'react';
 import './App.css';
 import {fakeOrders} from '../mock/fakeOrders';
 import Order from '../Order/Order';
-import {
-  getSortFunction,
-  sortOrders,
-  sortTypes,
-} from '../utils/sortOrders';
+import {getSortFunction, sortOrders, sortTypes,} from '../utils/sortOrders';
 
 export default class App extends React.PureComponent {
   state = {
@@ -49,6 +45,6 @@ export default class App extends React.PureComponent {
           {this.getOrders(fakeOrders)}
         </div>
       </div>
-      )
+    )
   }
 }
