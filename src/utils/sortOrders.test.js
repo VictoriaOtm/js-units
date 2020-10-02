@@ -2,12 +2,9 @@ import React from 'react'
 import {getSortFunction, sortByDate, sortByItemCount, sortOrders, sortTypes} from './sortOrders';
 
 describe('sortOrders function', () => {
-	const mockCompare = jest.fn();
-	beforeEach(() => {
-		mockCompare.mockClear()
-	});
-
 	it('valid sort', () => {
+		const mockCompare = jest.fn();
+
 		const order1 = {
 			items: ['item1', 'item2'],
 		};
@@ -21,12 +18,15 @@ describe('sortOrders function', () => {
 	});
 
 	it('empty object sort', () => {
+		const mockCompare = jest.fn();
 
 		const result = sortOrders([], mockCompare);
 		expect(mockCompare.mock.calls.length).toBe(0);
 	});
 
 	it('invalid object sort', () => {
+		const mockCompare = jest.fn();
+
 		const result = sortOrders(null, mockCompare);
 		expect(mockCompare.mock.calls.length).toBe(0);
 	});
