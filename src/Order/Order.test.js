@@ -20,6 +20,9 @@ describe('Order Component', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
+    afterAll(() => {
+        jest.resetModules();
+    });
 
     it('render with order', () => {
         const wrapper = shallow(<Order order={fakeOrders[0]}/>);
