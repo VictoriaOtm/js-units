@@ -12,8 +12,42 @@ import {fakeOrders} from '../mock/fakeOrders';
 configure({adapter: new Adapter()});
 
 describe('Order component', () => {
-	const wrapper = shallow(<Order order={fakeOrders[0]}/>);
-	it('render with fake order', () => {
+	beforeEach(() => {
+		getDate.mockReturnValue('14 марта, чт, 2019 год');
+	});
+
+	afterEach(() => {
+		jest.clearAllMocks();
+	});
+
+	it('renders correct', () => {
+		const wrapper = shallow(<Order order={fakeOrders[0]}/>);
+
 		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correct with no props', () => {
+		const wrapper = shallow(<Order/>);
+
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correct with no items in orders', () => {
+		const order = {
+			date: 1,
+			shop: 'shop'
+		}
+
+		const wrapper = shallow(<Order order={order}/>);
+
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+
+	it('calls getDate()', () => {
+		shallow(<Order order={fakeOrders[0]}/>);
+
+		expect(getDate).toHaveBeenCalled();
+		expect(getDate).toHaveBeenCalledWith(fakeOrders[0].date);
 	});
 });
