@@ -22,6 +22,7 @@ describe('Order Component', () => {
   
   afterEach(() => {
     jest.clearAllMocks();
+    jest.resetModules();
   });
   
   it('With order', () => {
