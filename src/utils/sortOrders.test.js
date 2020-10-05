@@ -96,18 +96,31 @@ describe('unit test sortOrders', () => {
 	
 	let gen = setup();
 	//
-	test.each([1, 5, 10, 13, 23, 30, 40, 10, 4, 20, 14, 8, 23, 17, 18, 99])('compare number of checks',
+  test.each([0, 1])('no calls', (num) => {
+    let orders = new Array(num)
+  
+    for ( let i = 0; i < num; i++ ) {
+      orders.push(gen.next().value)
+    }
+  
+    let mockFn = jest.fn(() => {});
+    const result = sortOrders(orders, mockFn)
+  
+    expect(mockFn.mock.calls.length).toBe(0)
+  })
+	test.each([2, 5, 10, 13, 23, 30, 40, 10, 4, 20, 14, 8, 23, 17, 18, 99])('perform comparisons',
 		(num) => {
 			
-			let orders = []
+			let orders = new Array(num)
+			
 			for ( let i = 0; i < num; i++ ) {
 				orders.push(gen.next().value)
 			}
 			
 			let mockFn = jest.fn(() => {});
 			const result = sortOrders(orders, mockFn)
-			// n-1 comparison for n elems
-			expect(mockFn.mock.calls.length).toBe(num - 1);
+   
+			expect(mockFn).toBeCalled()
 			
 		})
 });
