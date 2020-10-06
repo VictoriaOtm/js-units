@@ -17,7 +17,6 @@ describe('Order', () => {
 
     beforeAll(() => {
         getDate.mockReturnValue('28 сентября, пн, 2020 год');
-        jest.clearAllMocks();
     })
 
     afterEach(() => {

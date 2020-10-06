@@ -26,9 +26,6 @@ describe('sortByItemCount function', () => {
 describe('sortOrders function', () => {
     const mockSortFunc = jest.fn((a, b) => a - b);
 
-    beforeAll(() => {
-        jest.clearAllMocks();
-    });
     beforeEach(() => {
         jest.clearAllMocks();
     });
